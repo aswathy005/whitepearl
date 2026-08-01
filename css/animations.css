@@ -1,0 +1,670 @@
+/*=====================================================
+    animations.css
+    Premium Animation Collection
+======================================================*/
+
+/* ==========================================
+   Page Fade In
+========================================== */
+
+body{
+
+    animation:pageFade 1.5s ease forwards;
+
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   Glass Card Entrance
+========================================== */
+
+.glass-card{
+
+    animation:
+
+    cardZoom 2s ease,
+
+    cardFloat 8s ease-in-out infinite 2s;
+
+}
+
+@keyframes cardZoom{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+        scale(.7)
+
+        translateY(100px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+
+        scale(1)
+
+        translateY(0);
+
+    }
+
+}
+
+@keyframes cardFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   Logo 3D Rotation
+========================================== */
+
+.logo{
+
+    animation:
+
+    logoReveal 2s ease,
+
+    logoRotate 12s linear infinite 2s,
+
+    floatLogo 5s ease-in-out infinite;
+
+    transform-style:preserve-3d;
+
+}
+
+@keyframes logoReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        scale(.2)
+
+        rotateY(-360deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        scale(1)
+
+        rotateY(0deg);
+
+    }
+
+}
+
+@keyframes logoRotate{
+
+    0%{
+
+        transform:
+
+        rotateY(0deg);
+
+    }
+
+    100%{
+
+        transform:
+
+        rotateY(360deg);
+
+    }
+
+}
+
+/* ==========================================
+   Spotlight Sweep
+========================================== */
+
+.spotlight{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(circle at 20% 10%,
+
+    rgba(255,255,255,.20),
+
+    transparent 20%);
+
+    mix-blend-mode:screen;
+
+    animation:spotlightMove 8s linear infinite;
+
+    z-index:2;
+
+}
+
+@keyframes spotlightMove{
+
+    0%{
+
+        background-position:0% 0%;
+
+    }
+
+    25%{
+
+        background-position:100% 10%;
+
+    }
+
+    50%{
+
+        background-position:70% 100%;
+
+    }
+
+    75%{
+
+        background-position:20% 80%;
+
+    }
+
+    100%{
+
+        background-position:0% 0%;
+
+    }
+
+}
+
+/* ==========================================
+   Heading Glow
+========================================== */
+
+h1 span{
+
+    animation:goldGlow 2s ease-in-out infinite;
+
+}
+
+@keyframes goldGlow{
+
+    0%{
+
+        text-shadow:
+
+        0 0 10px gold;
+
+    }
+
+    50%{
+
+        text-shadow:
+
+        0 0 40px gold,
+
+        0 0 70px orange;
+
+    }
+
+    100%{
+
+        text-shadow:
+
+        0 0 10px gold;
+
+    }
+
+}
+
+/* ==========================================
+   Welcome Badge
+========================================== */
+
+.welcome-tag{
+
+    animation:
+
+    badgePulse 3s infinite;
+
+}
+
+@keyframes badgePulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   Countdown Boxes
+========================================== */
+
+.time-box{
+
+    animation:
+
+    boxFloat 5s ease-in-out infinite;
+
+}
+
+.time-box:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+.time-box:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.time-box:nth-child(4){
+
+    animation-delay:.9s;
+
+}
+
+@keyframes boxFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   Button Glow
+========================================== */
+
+#enterBtn,
+#cutRibbon{
+
+    animation:
+
+    buttonPulse 2s infinite;
+
+}
+
+@keyframes buttonPulse{
+
+    0%{
+
+        box-shadow:
+
+        0 0 15px gold;
+
+    }
+
+    50%{
+
+        box-shadow:
+
+        0 0 45px gold,
+
+        0 0 90px orange;
+
+    }
+
+    100%{
+
+        box-shadow:
+
+        0 0 15px gold;
+
+    }
+
+}
+
+/* ==========================================
+   Button Hover 3D
+========================================== */
+
+#enterBtn:hover,
+#cutRibbon:hover{
+
+    transform:
+
+    perspective(800px)
+
+    rotateX(15deg)
+
+    rotateY(-10deg)
+
+    scale(1.08);
+
+}
+
+/* ==========================================
+   Music Button
+========================================== */
+
+#musicToggle{
+
+    animation:
+
+    musicBeat 2s infinite;
+
+}
+
+@keyframes musicBeat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    25%{
+
+        transform:scale(1.15);
+
+    }
+
+    50%{
+
+        transform:scale(1);
+
+    }
+
+    75%{
+
+        transform:scale(1.12);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   Floating Stars
+========================================== */
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    animation:
+
+    starBlink 3s infinite;
+
+}
+
+@keyframes starBlink{
+
+    0%{
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.2;
+
+    }
+
+}
+
+/* ==========================================
+   Gold Sparkles
+========================================== */
+
+.sparkle{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    background:gold;
+
+    border-radius:50%;
+
+    animation:
+
+    sparkle 2s linear infinite;
+
+}
+
+@keyframes sparkle{
+
+    from{
+
+        transform:
+
+        scale(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+        scale(3);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   Fade Out Animation
+========================================== */
+
+.fadeOut{
+
+    animation:
+
+    exitPage 1.2s forwards;
+
+}
+
+@keyframes exitPage{
+
+    to{
+
+        opacity:0;
+
+        transform:
+
+        scale(.92);
+
+        filter:blur(10px);
+
+    }
+
+}
+
+/* ==========================================
+   Curtain Shake
+========================================== */
+
+.curtain{
+
+    animation:
+
+    curtainMove 2s ease;
+
+}
+
+@keyframes curtainMove{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* ==========================================
+   Ribbon Glow
+========================================== */
+
+.ribbon{
+
+    animation:
+
+    ribbonGlow 2s infinite;
+
+}
+
+@keyframes ribbonGlow{
+
+    0%{
+
+        filter:drop-shadow(0 0 10px crimson);
+
+    }
+
+    50%{
+
+        filter:drop-shadow(0 0 25px red);
+
+    }
+
+    100%{
+
+        filter:drop-shadow(0 0 10px crimson);
+
+    }
+
+}
+
+/* ==========================================
+   Hero Breathing Effect
+========================================== */
+
+.hero{
+
+    animation:
+
+    heroBreath 12s ease-in-out infinite;
+
+}
+
+@keyframes heroBreath{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.01);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}

@@ -1,0 +1,877 @@
+/*=====================================================
+    GRAND INAUGURATION
+    style.css
+======================================================*/
+
+#enterBtn {
+
+    position: relative !important;
+
+    z-index: 999999 !important;
+
+    pointer-events: auto !important;
+
+}
+
+
+#fireworksCanvas,
+#particles-js,
+#shootingStars,
+.spotlight {
+
+    pointer-events: none !important;
+
+}
+
+:root {
+
+    --gold: #FFD700;
+    --gold2: #ffb300;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, .10);
+    --glassBorder: rgba(255, 255, 255, .20);
+    --text: #f5f5f5;
+    --shadow: rgba(0, 0, 0, .45);
+    --overlay: rgba(0, 0, 0, .45);
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #000;
+    color: var(--white);
+
+}
+
+/*=====================================================
+BACKGROUND IMAGE
+======================================================*/
+
+#bgImage {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: -5;
+
+}
+
+.video-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(ellipse at top,
+            rgba(0, 0, 0, 0.40) 0%,
+            rgba(0, 0, 0, 0.65) 100%),
+
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.45) 50%,
+            rgba(0, 0, 0, 0.60) 100%);
+
+    z-index: -4;
+
+}
+
+/*=====================================================
+CANVAS
+======================================================*/
+
+#particles-js,
+#fireworksCanvas,
+#shootingStars {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+#particles-js {
+
+    z-index: -3;
+
+}
+
+#shootingStars {
+
+    z-index: -2;
+
+    pointer-events: none;
+
+}
+
+#fireworksCanvas {
+
+    z-index: 20;
+
+    pointer-events: none;
+
+}
+
+/*=====================================================
+HERO
+======================================================*/
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+
+    overflow-y: auto;
+
+}
+
+/*=====================================================
+LOGO HEADER
+======================================================*/
+
+.logo-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding: 0 5px;
+
+}
+
+.logo-left {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.logo-right {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+/* .tk-logo-container,
+.lips-logo-container {
+
+
+
+    padding: 6px 14px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 55px;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.40), 0 8px 25px rgba(0, 0, 0, 0.65);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+} */
+
+.tk-logo-container:hover,
+.lips-logo-container:hover {
+
+    transform: scale(1.04);
+
+    /* box-shadow: 0 0 25px rgba(255, 255, 255, 0.60), 0 10px 30px rgba(0, 0, 0, 0.8); */
+
+}
+
+.tk-logo {
+
+    height: 50px;
+
+    width: 90%;
+
+    object-fit: contain;
+
+}
+
+.lips-logo {
+
+    height: 100px;
+
+    width: 150px;
+
+    /* object-fit: contain; */
+
+}
+
+@media (max-width:600px) {
+
+    .logo-header {
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+    }
+
+    .tk-logo-container,
+    .lips-logo-container {
+
+        height: 40px;
+
+        padding: 4px 10px;
+
+    }
+
+    .tk-logo,
+    .lips-logo {
+
+        height: 30px;
+
+    }
+
+}
+
+/*=====================================================
+GLASS CARD
+======================================================*/
+
+.glass-card {
+
+    width: min(900px, 95vw);
+
+    margin-top: 30px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background: radial-gradient(ellipse at center, rgba(10, 14, 26, 0.55) 0%, rgba(10, 14, 26, 0.45) 70%, rgba(10, 14, 26, 0.35) 100%);
+
+    border: 1px solid rgba(255, 215, 0, 0.15);
+
+    backdrop-filter: blur(16px);
+
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(212, 175, 55, 0.04),
+        inset 0 0 25px rgba(255, 255, 255, 0.05);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.glass-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+
+    left: -60%;
+
+    width: 50%;
+
+    height: 300%;
+
+    background:
+
+        linear-gradient(transparent,
+
+            rgba(255, 255, 255, .15),
+
+            transparent);
+
+    transform: rotate(25deg);
+
+    animation: shine 8s linear infinite;
+
+}
+
+@keyframes shine {
+
+    from {
+
+        left: -80%;
+
+    }
+
+    to {
+
+        left: 170%;
+
+    }
+
+}
+
+/*=====================================================
+LOGO
+======================================================*/
+
+.logo-wrapper {
+
+    width: 140px;
+
+    height: 140px;
+
+    margin: auto;
+
+    margin-bottom: 20px;
+
+}
+
+
+.logo {
+
+    width: 140px;
+
+    height: 140px;
+
+    object-fit: contain;
+
+}
+
+.logo-glow {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(circle,
+
+            rgba(255, 215, 0, .55),
+
+            transparent 70%);
+
+    filter: blur(18px);
+
+    animation: pulseGlow 3s infinite;
+
+}
+
+@media(max-width:768px) {
+
+    .hero {
+
+        padding-top: 50px;
+
+        padding-bottom: 80px;
+
+    }
+
+
+    .glass-card {
+
+        margin-top: 10px;
+
+        padding: 25px;
+
+    }
+
+
+    .logo-wrapper,
+    .logo {
+
+        width: 110px;
+
+        height: 110px;
+
+    }
+
+}
+
+@keyframes floatLogo {
+
+    0% {
+
+        transform:
+
+            translateY(0px);
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-12px);
+
+    }
+
+    100% {
+
+        transform:
+
+            translateY(0px);
+
+    }
+
+}
+
+@keyframes pulseGlow {
+
+    0% {
+
+        transform: scale(.8);
+
+        opacity: .4;
+
+    }
+
+    50% {
+
+        transform: scale(1.2);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform: scale(.8);
+
+        opacity: .4;
+
+    }
+
+}
+
+/*=====================================================
+TEXT
+======================================================*/
+
+.logo-header-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.logo-svg {
+    width: 220px;
+    height: 55px;
+}
+
+.welcome-badge-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-badge {
+    display: inline-block;
+    border: 1px solid #c5a85c;
+    border-radius: 20px;
+    padding: 6px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(10, 14, 26, 0.45);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.grand-inauguration-title {
+    font-family: 'Cinzel', serif;
+    font-size: 62px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    background: linear-gradient(to bottom, #d4af37 0%, #fff9e6 20%, #aa7c11 40%, #ffdf73 70%, #8a6f27 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #d4af37;
+    filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.9));
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    margin-bottom: 12px;
+}
+
+.sub-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #cccccc;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+/*=====================================================
+COUNTDOWN
+======================================================*/
+
+#countdown {
+
+    margin-top: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+}
+
+.time-box {
+    width: 125px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: rgba(10, 14, 26, 0.55);
+    border: 1.5px solid #c5a85c;
+    box-shadow: inset 0 0 15px rgba(197, 168, 92, 0.1), 0 10px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: .35s;
+}
+
+.time-box:hover {
+    transform: translateY(-8px);
+    background: rgba(197, 168, 92, 0.18);
+    box-shadow: inset 0 0 20px rgba(197, 168, 92, 0.25), 0 12px 25px rgba(197, 168, 92, 0.3);
+}
+
+.time-box h3 {
+    color: #edd69a;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.time-box span {
+    color: #ffffff;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/*=====================================================
+BUTTONS
+======================================================*/
+
+button {
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    border: none;
+
+}
+
+#cutRibbon,
+#enterBtn {
+    margin-top: 35px;
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(10, 14, 26, 0.65);
+    border: 1.5px solid #c5a85c;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: .35s;
+    box-shadow: 0 0 20px rgba(197, 168, 92, 0.25);
+    backdrop-filter: blur(10px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#cutRibbon:hover,
+#enterBtn:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: rgba(197, 168, 92, 0.2);
+    box-shadow: 0 0 30px rgba(197, 168, 92, 0.6);
+    color: #edd69a;
+}
+
+#musicToggle {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    font-size: 24px;
+
+    background: rgba(255, 255, 255, .18);
+
+    backdrop-filter: blur(10px);
+
+    color: #fff;
+
+    border: 1px solid rgba(255, 255, 255, .3);
+
+    z-index: 999;
+
+}
+
+#musicToggle:hover {
+
+    transform: scale(1.1);
+
+}
+
+/*=====================================================
+RESPONSIVE
+======================================================*/
+
+@media(max-width:992px) {
+
+    .glass-card {
+
+        padding: 40px;
+
+    }
+
+    h1 {
+
+        font-size: 46px;
+
+    }
+
+    h2 {
+
+        font-size: 28px;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .logo,
+    .logo-wrapper {
+
+        width: 130px;
+        height: 130px;
+
+    }
+
+    h1 {
+
+        font-size: 34px;
+
+    }
+
+    h2 {
+
+        font-size: 22px;
+
+    }
+
+    p {
+
+        font-size: 15px;
+
+    }
+
+    .time-box {
+
+        width: 90px;
+
+    }
+
+    .time-box h3 {
+
+        font-size: 28px;
+
+    }
+
+    #cutRibbon,
+    #enterBtn {
+
+        width: 100%;
+
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .glass-card {
+
+        padding: 25px;
+
+    }
+
+    .welcome-tag {
+
+        font-size: 12px;
+
+    }
+
+    h1 {
+
+        font-size: 28px;
+
+    }
+
+    h2 {
+
+        font-size: 20px;
+
+    }
+
+}
+
+.fadeOut {
+
+    animation: pageFadeOut 1.2s forwards;
+
+}
+
+
+@keyframes pageFadeOut {
+
+    from {
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        opacity: 0;
+
+    }
+
+}
+
+#cutRibbon:disabled {
+
+    opacity: .4;
+
+    cursor: not-allowed;
+
+    filter: grayscale(1);
+
+    box-shadow: none;
+
+}
+
+
+#cutRibbon.enabled {
+
+    opacity: 1;
+
+    cursor: pointer;
+
+    filter: none;
+
+    animation: pulseButton 1.5s infinite;
+
+}
+
+
+@keyframes pulseButton {
+
+    0% {
+
+        box-shadow: 0 0 15px rgba(255, 215, 0, .5);
+
+    }
+
+    50% {
+
+        box-shadow: 0 0 45px rgba(255, 215, 0, 1);
+
+    }
+
+    100% {
+
+        box-shadow: 0 0 15px rgba(255, 215, 0, .5);
+
+    }
+
+}

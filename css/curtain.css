@@ -1,0 +1,318 @@
+/*=====================================================
+    curtain.css
+    Cinematic Theatre Curtains
+======================================================*/
+
+#curtainContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    overflow:hidden;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+}
+
+/*====================================
+    Left & Right Curtains
+====================================*/
+
+.curtain{
+
+    position:relative;
+
+    width:50%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        90deg,
+        #3d0000 0%,
+        #6d0000 20%,
+        #8b0000 50%,
+        #6d0000 80%,
+        #3d0000 100%
+    );
+
+    box-shadow:
+        inset 0 0 60px rgba(0,0,0,.8),
+        inset -20px 0 40px rgba(255,255,255,.08);
+
+}
+
+/*====================================
+    Curtain Folds
+====================================*/
+
+.curtain::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,.05) 0px,
+        rgba(255,255,255,.02) 18px,
+        rgba(0,0,0,.18) 36px,
+        rgba(255,255,255,.02) 54px
+    );
+
+    opacity:.8;
+
+}
+
+.curtain::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255,255,255,.18),
+        transparent 18%,
+        transparent 80%,
+        rgba(0,0,0,.45)
+    );
+
+}
+
+/*====================================
+    Gold Rope
+====================================*/
+
+.leftCurtain{
+
+    border-right:6px solid #FFD700;
+
+}
+
+.rightCurtain{
+
+    border-left:6px solid #FFD700;
+
+}
+
+/*====================================
+    Curtain Opening
+====================================*/
+
+.leftCurtain{
+
+    animation:
+
+    openLeft 3s cubic-bezier(.77,0,.18,1) forwards;
+
+    animation-delay:1s;
+
+}
+
+.rightCurtain{
+
+    animation:
+
+    openRight 3s cubic-bezier(.77,0,.18,1) forwards;
+
+    animation-delay:1s;
+
+}
+
+@keyframes openLeft{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    100%{
+
+        transform:translateX(-105%);
+
+    }
+
+}
+
+@keyframes openRight{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    100%{
+
+        transform:translateX(105%);
+
+    }
+
+}
+
+/*====================================
+    Curtain Shine
+====================================*/
+
+.curtain .shine{
+
+    position:absolute;
+
+    top:0;
+
+    left:-40%;
+
+    width:30%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.18),
+
+        transparent
+
+    );
+
+    transform:skewX(-20deg);
+
+    animation:shineMove 4s linear infinite;
+
+}
+
+@keyframes shineMove{
+
+    from{
+
+        left:-40%;
+
+    }
+
+    to{
+
+        left:140%;
+
+    }
+
+}
+
+/*====================================
+    Top Valance
+====================================*/
+
+#curtainContainer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:70px;
+
+    background:
+
+    linear-gradient(
+
+        #5b0000,
+
+        #7b0000,
+
+        #4a0000
+
+    );
+
+    border-bottom:5px solid #FFD700;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.6);
+
+    z-index:10;
+
+}
+
+/*====================================
+    Bottom Shadow
+====================================*/
+
+#curtainContainer::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:40px;
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.5)
+
+    );
+
+}
+
+/*====================================
+    Responsive
+====================================*/
+
+@media(max-width:768px){
+
+    #curtainContainer::before{
+
+        height:50px;
+
+    }
+
+    .leftCurtain{
+
+        border-right:4px solid #FFD700;
+
+    }
+
+    .rightCurtain{
+
+        border-left:4px solid #FFD700;
+
+    }
+
+}

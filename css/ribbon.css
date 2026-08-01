@@ -1,0 +1,617 @@
+/*=====================================================
+    ribbon.css
+    Premium Ribbon Cutting Ceremony
+======================================================*/
+
+/* ==========================================
+   Ribbon Section
+========================================== */
+
+#ribbonSection{
+
+    margin-top:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    position:relative;
+
+    transition:.8s;
+
+}
+
+/* ==========================================
+   Ribbon
+========================================== */
+
+.ribbon{
+
+    position:relative;
+
+    width:680px;
+
+    max-width:90%;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.35));
+
+    transition:all .8s ease;
+
+}
+
+/* ==========================================
+   Ribbon Left
+========================================== */
+
+.left-ribbon{
+
+    width:50%;
+
+    height:26px;
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        #ff7070,
+        #d60000,
+        #8b0000
+    );
+
+    border-top:2px solid #FFD700;
+
+    border-bottom:2px solid #FFD700;
+
+    border-radius:15px 0 0 15px;
+
+    transform-origin:right center;
+
+    transition:1s;
+
+}
+
+/* ==========================================
+   Ribbon Right
+========================================== */
+
+.right-ribbon{
+
+    width:50%;
+
+    height:26px;
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        #ff7070,
+        #d60000,
+        #8b0000
+    );
+
+    border-top:2px solid #FFD700;
+
+    border-bottom:2px solid #FFD700;
+
+    border-radius:0 15px 15px 0;
+
+    transform-origin:left center;
+
+    transition:1s;
+
+}
+
+/* ==========================================
+   Bow
+========================================== */
+
+.bow{
+
+    position:absolute;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    #ff4b4b,
+    #b30000);
+
+    border:3px solid gold;
+
+    z-index:10;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:
+
+    0 0 25px rgba(255,215,0,.55);
+
+}
+
+.bow::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-30px;
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50% 0;
+
+    background:#d60000;
+
+    transform:rotate(-45deg);
+
+}
+
+.bow::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-30px;
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:0 50%;
+
+    background:#d60000;
+
+    transform:rotate(45deg);
+
+}
+
+/* ==========================================
+   Ribbon Animation
+========================================== */
+
+.ribbon{
+
+    animation:ribbonFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes ribbonFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   Ribbon Glow
+========================================== */
+
+.ribbon::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:20px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    animation:ribbonShine 3s linear infinite;
+
+}
+
+@keyframes ribbonShine{
+
+    from{
+
+        transform:translateX(-120%);
+
+    }
+
+    to{
+
+        transform:translateX(120%);
+
+    }
+
+}
+
+/* ==========================================
+   Cut Button
+========================================== */
+
+#cutRibbon{
+
+    min-width:230px;
+
+    letter-spacing:1px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#cutRibbon::before{
+
+    content:"✂";
+
+    margin-right:8px;
+
+}
+
+/* ==========================================
+   Ribbon Cut State
+========================================== */
+
+.ribbon.cut .left-ribbon{
+
+    transform:
+
+    rotate(-18deg)
+
+    translateX(-80px);
+
+    opacity:0;
+
+}
+
+.ribbon.cut .right-ribbon{
+
+    transform:
+
+    rotate(18deg)
+
+    translateX(80px);
+
+    opacity:0;
+
+}
+
+.ribbon.cut .bow{
+
+    transform:
+
+    scale(0)
+
+    rotate(360deg);
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+/* ==========================================
+   Enter Button
+========================================== */
+
+#enterBtn{
+
+    opacity:0;
+
+    transform:
+
+    translateY(30px);
+
+    pointer-events:none;
+
+}
+
+#enterBtn.show{
+
+    animation:showEnter 1s forwards;
+
+}
+
+@keyframes showEnter{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+        pointer-events:auto;
+
+    }
+
+}
+
+/* ==========================================
+   Scissors
+========================================== */
+
+.scissors{
+
+    position:absolute;
+
+    width:130px;
+
+    height:130px;
+
+    left:50%;
+
+    top:-50px;
+
+    margin-left:-65px;
+
+    z-index:20;
+
+    pointer-events:none;
+
+    animation:scissorMove .8s ease forwards;
+
+}
+
+@keyframes scissorMove{
+
+    from{
+
+        transform:
+
+        translateY(-30px)
+
+        rotate(-15deg);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+
+        translateY(25px)
+
+        rotate(15deg);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   Ribbon Pieces
+========================================== */
+
+.ribbon-piece{
+
+    position:absolute;
+
+    width:100px;
+
+    height:22px;
+
+    background:#b00000;
+
+    border-top:2px solid gold;
+
+    border-bottom:2px solid gold;
+
+    opacity:0;
+
+}
+
+.ribbon-piece.left{
+
+    left:20%;
+
+}
+
+.ribbon-piece.right{
+
+    right:20%;
+
+}
+
+.ribbon-piece.left.fly{
+
+    animation:leftFly 1.3s forwards;
+
+}
+
+.ribbon-piece.right.fly{
+
+    animation:rightFly 1.3s forwards;
+
+}
+
+@keyframes leftFly{
+
+    to{
+
+        transform:
+
+        translate(-200px,-120px)
+
+        rotate(-80deg);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes rightFly{
+
+    to{
+
+        transform:
+
+        translate(200px,-120px)
+
+        rotate(80deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   Ribbon Sparkles
+========================================== */
+
+.ribbon-spark{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:gold;
+
+    animation:ribbonSpark 1s linear forwards;
+
+}
+
+@keyframes ribbonSpark{
+
+    from{
+
+        transform:scale(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+        translateY(-60px)
+
+        scale(2.5);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:768px){
+
+    .ribbon{
+
+        width:95%;
+
+        height:36px;
+
+    }
+
+    .left-ribbon,
+    .right-ribbon{
+
+        height:18px;
+
+    }
+
+    .bow{
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+    .bow::before,
+    .bow::after{
+
+        width:28px;
+
+        height:28px;
+
+    }
+
+    #cutRibbon{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================================
+   Static Gold Scissors Overlay
+========================================== */
+.static-scissors {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 12;
+    transition: all 0.5s ease;
+}
+
+@media(max-width:768px){
+    .static-scissors,
+    .scissors {
+        width: 100px;
+        height: 100px;
+    }
+    .scissors {
+        margin-left: -50px;
+    }
+}

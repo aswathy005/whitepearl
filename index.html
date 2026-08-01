@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grand Inauguration | Whitepearl Technikos</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Cinzel:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/curtain.css">
+    <link rel="stylesheet" href="css/ribbon.css">
+
+</head>
+
+<body>
+
+    <!-- ===========================
+         BACKGROUND IMAGE
+    ============================ -->
+
+    <img id="bgImage" src="assets/background.jpeg" alt="Civil Engineering Construction Background">
+
+    <div class="video-overlay"></div>
+
+    <!-- ===========================
+        GOLD PARTICLES
+    ============================ -->
+
+    <div id="particles-js"></div>
+
+    <!-- ===========================
+        SHOOTING STARS
+    ============================ -->
+
+    <div id="shootingStars"></div>
+
+    <!-- ===========================
+        FIREWORKS
+    ============================ -->
+
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- ===========================
+        CURTAINS
+    ============================ -->
+
+    <div id="curtainContainer">
+
+        <div class="curtain leftCurtain"></div>
+
+        <div class="curtain rightCurtain"></div>
+
+    </div>
+
+    <!-- ===========================
+        SPOTLIGHT
+    ============================ -->
+
+    <div class="spotlight"></div>
+
+    <!-- ===========================
+        MAIN CARD
+    ============================ -->
+
+    <section class="hero">
+
+        <div class="glass-card">
+
+            <!-- Logo Header (Top Left: tk.png, Top Right: lips.png) -->
+            <div class="logo-header">
+                <div class="logo-left">
+                    <div class="tk-logo-container">
+                        <img src="assets/tk.png" alt="Whitepearl Technikos" class="tk-logo">
+                    </div>
+                </div>
+
+                <div class="logo-right">
+                    <div class="lips-logo-container">
+                        <img src="assets/lips.png" alt="LIPS Research" class="lips-logo">
+                    </div>
+                </div>
+            </div>
+
+            <!-- "Welcome To" Badge -->
+            <div class="welcome-badge-container">
+                <span class="welcome-badge">Welcome To</span>
+            </div>
+
+            <h1 class="grand-inauguration-title">
+                GRAND INAUGURATION
+            </h1>
+
+            <h1 class="sub-title">
+                ONLINE CLASSES
+            </h1>
+
+            <p class="tagline">
+                PROFESSIONAL DIPLOMA & CERTIFICATE COURSES
+            </p>
+            <P>Learn.Upgrade.Succeed.Your Future is in Your Hands!</P>
+
+            <!-- Countdown -->
+
+            <div id="countdown">
+
+                <div class="time-box">
+
+                    <h3 id="days">00</h3>
+
+                    <span>Days</span>
+
+                </div>
+
+                <div class="time-box">
+
+                    <h3 id="hours">00</h3>
+
+                    <span>Hours</span>
+
+                </div>
+
+                <div class="time-box">
+
+                    <h3 id="minutes">00</h3>
+
+                    <span>Minutes</span>
+
+                </div>
+
+                <div class="time-box">
+
+                    <h3 id="seconds">00</h3>
+
+                    <span>Seconds</span>
+
+                </div>
+
+            </div>
+
+            <!-- Ribbon -->
+            <div id="ribbonSection">
+                <div class="ribbon">
+                    <div class="left-ribbon"></div>
+                    <div class="bow">
+                        <div class="static-scissors">
+                            <svg class="scissors-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="goldBladeLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#fff2cc" />
+                                        <stop offset="50%" stop-color="#d4af37" />
+                                        <stop offset="100%" stop-color="#8a6f27" />
+                                    </linearGradient>
+                                    <linearGradient id="goldBladeRight" x1="100%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#ffffff" />
+                                        <stop offset="50%" stop-color="#edd69a" />
+                                        <stop offset="100%" stop-color="#aa7c11" />
+                                    </linearGradient>
+                                    <linearGradient id="goldHandle" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#8a6f27" />
+                                        <stop offset="30%" stop-color="#d4af37" />
+                                        <stop offset="50%" stop-color="#fff9e6" />
+                                        <stop offset="70%" stop-color="#d4af37" />
+                                        <stop offset="100%" stop-color="#8a6f27" />
+                                    </linearGradient>
+                                    <filter id="shadow3d" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000"
+                                            flood-opacity="0.6" />
+                                    </filter>
+                                </defs>
+                                <g filter="url(#shadow3d)">
+                                    <!-- Piece 2 (Right loop to Left blade, behind) -->
+                                    <g class="scissor-piece-behind">
+                                        <circle cx="78" cy="94" r="14" stroke="url(#goldHandle)" stroke-width="8"
+                                            fill="none" />
+                                        <path d="M 78,94 L 60,60" stroke="url(#goldHandle)" stroke-width="8"
+                                            stroke-linecap="round" />
+                                        <path d="M 60,60 L 38,18 C 44,32 50,48 56,60 Z" fill="url(#goldBladeRight)" />
+                                        <path d="M 60,60 L 38,18 L 41,21 L 58,59 Z" fill="rgba(0, 0, 0, 0.2)" />
+                                    </g>
+                                    <!-- Piece 1 (Left loop to Right blade, in front) -->
+                                    <g class="scissor-piece-front">
+                                        <circle cx="42" cy="94" r="14" stroke="url(#goldHandle)" stroke-width="8"
+                                            fill="none" />
+                                        <path d="M 42,94 L 60,60" stroke="url(#goldHandle)" stroke-width="8"
+                                            stroke-linecap="round" />
+                                        <path d="M 60,60 L 82,18 C 76,32 70,48 64,60 Z" fill="url(#goldBladeLeft)" />
+                                        <path d="M 60,60 L 82,18 L 79,21 L 62,59 Z" fill="rgba(255, 255, 255, 0.4)" />
+                                    </g>
+                                    <!-- Pivot Screw -->
+                                    <circle cx="60" cy="60" r="5" fill="url(#goldHandle)" stroke="#4d3b0e"
+                                        stroke-width="0.5" />
+                                    <circle cx="60" cy="60" r="2.5" fill="#4d3b0e" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="right-ribbon"></div>
+                </div>
+                <button id="cutRibbon" class="cut-ribbon-btn" disabled>
+                    <span class="btn-icon">✂</span> Cut The Ribbon
+                </button>
+            </div>
+
+            <!-- Enter Button -->
+
+            <button id="enterBtn" style="display:none;">
+
+                GO LIVE NOW
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ===========================
+        MUSIC BUTTON
+    ============================ -->
+
+    <button id="musicToggle">🔇</button>
+
+    <!-- ===========================
+        AUDIO
+    ============================ -->
+
+    <audio id="bgMusic" loop>
+        <source src="assets/welcome.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="fireworkSound">
+        <source src="assets/fireworks.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="ribbonSound">
+        <source src="assets/ribbon-cut.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- ===========================
+        LIBRARIES
+    ============================ -->
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/index.umd.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+    <!-- ===========================
+        JAVASCRIPT
+    ============================ -->
+
+    <script src="js/particles.js"></script>
+
+    <script src="js/shooting-stars.js"></script>
+
+    <script src="js/fireworks.js"></script>
+
+    <script src="js/cursor-trail.js"></script>
+
+    <script src="js/spotlight.js"></script>
+
+    <script src="js/countdown.js"></script>
+    <script src="js/ribbon.js"></script>
+    <script src="js/music.js"></script>
+
+</body>
+
+</html>
